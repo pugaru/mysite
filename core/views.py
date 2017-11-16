@@ -1,15 +1,18 @@
 from django.shortcuts import render
 #from .forms import ContatoForm
 from core.models import Curso
-from core.forms import ContatoForm,CursoForm
-from core.cursoRN import CursoRN
+from core.forms import ContactForm
+from core.backend import GerenciadorBanco
 
 # Create your views here.
 def index(request):
     contexto={
-        "usuario":"Ser Humano",
+        "usuario":"",
         #aluno,professor,sbruble
-        "perfil":"aluno",
+        "perfil": "aluno",
+        # "cursos": Curso.objects.all()
+        # "cursos": Curso.objects.raw('SELECT * FROM core_curso')
+        "cursos": GerenciadorBanco().select()
     }
     return render(request,"index.html",contexto)
 
@@ -17,30 +20,20 @@ def disciplina(request):
     return render(request,"disciplina.html")
 
 def detalhe_curso(request):
-    contexto={
-        "cursos": CursoRN().all()
-    }
-    return render(request,"detalhe_curso.html",contexto)
+    return render(request,"detalhe_curso.html")
 
 def lista_cursos(request):
-    contexto={
-        # "cursos":Curso.objects.all()
-        "cursos": CursoRN().all()
-    }
-    return render(request,"lista_cursos.html",contexto)
+    return render(request,"lista_cursos.html")
 
 def noticias(request):
     return render(request,"noticias.html")
 
 def contato(request):
-    print(request.POST)
     if request.POST:
-        form = ContatoForm(request.POST)
-        if form.is_valid():
-            form.envia_email()
+        form = ContactForm(request.POST)
+        #form.enviar_email()
     else:
-        form = ContatoForm()
-
+        form = ContactForm(request.POST)
     contexto = {
         "form":form
     }
@@ -48,17 +41,3 @@ def contato(request):
 
 def login(request):
     return render(request,"login.html")
-
-def curso(request):
-    print(request.POST)
-    if request.POST:
-        form = CursoForm(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = CursoForm()
-
-    contexto = {
-        "form":form
-    }
-    return render(request,"curso.html",contexto)

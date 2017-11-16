@@ -8,16 +8,30 @@
     
         {% block main %}
     <body>
-        <lista_cursos>
-            <h1><center>Lista de Cursos.</center></h1>
-            <center>
-                <ul>
-                    {% for curso in cursos %}
-                    <a a href='/templates/detalhe_curso.html'class="link" class="{{ curso.classe }}">{{ curso.nome }} - {{ curso.tipo }}</a><br>
-                    <br>
-                    {% endfor %}
-                </ul>
-            </lista_cursos>
-        {% endblock %}
-    </body>
+        
+<tipo_curso><h1><center>Lista de Cursos.</center></h1></tipo_curso>
+<center>
+
+<lista_cursos><h2>Graduação</h2></lista_cursos>
+<descricao_curso>
+> <a href='/templates/detalhe_curso.html'class="link">Administração (ênfase em tecnologia da informação)</a><br>
+> <a href='/templates/detalhe_curso.html'class="link">Sistemas de Informação</a>
+</descricao_curso>
+
+<lista_cursos><h2>Graduação Tecnológica</h2></lista_cursos>
+<lista_cursos> 
+> <a href='/templates/detalhe_curso.html'class="link">Banco de Dados</a><br>
+> <a href='/templates/detalhe_curso.html'class="link">Análise e Desenvolvimento de Sistemas</a><br>
+</lista_cursos>
+
+<lista_cursos><h2>Pós-graduação</h2></lista_cursos>
+
+<lista_cursos>
+> <a href='/templates/detalhe_curso.html' class="link">Business Intelligence com Big Data</a><br>
+> <a href='/templates/detalhe_curso.html'class="link">MBA Em Gestão da TI</a><br>
+</lista_cursos>
+</center>
+<br>
+    {% endblock %}
+</body>
 </html>
