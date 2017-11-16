@@ -1,9 +1,9 @@
 
-# from core.executorSQL import ExecutorSQL
-# from core.models import Curso
+from core.executorSQL import ExecutorSQL
+from core.models import Curso
 
-from django.core.executorSQL import ExecutorSQL
-from django.core.models import Curso
+# from django.core.executorSQL import ExecutorSQL
+# from django.core.models import Curso
 
 class CursoDAO():
 
