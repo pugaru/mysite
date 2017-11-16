@@ -1,4 +1,0 @@
---find-links wheelhouse
-# django<1.10
-Django==1.11.7
-mysql-python==1.2.5
