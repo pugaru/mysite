@@ -1,5 +1,5 @@
 from core.cursoDAO import CursoDAO
-from core.curso import Curso
+from core.models import Curso
 
 class CursoRN():
 
