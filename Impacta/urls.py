@@ -1,4 +1,4 @@
-"""Impacta URL Configuration
+"""lmsimpacta URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -19,14 +19,12 @@ from core.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
-    url(r'^contato/', Contato),
-    url(r'^cursos/', cursos),
-    url(r'^detalhes/', detalhes),
-    url(r'^disciplinas/', disciplinas),
-    url(r'^EsqueciSenha/', EsqueciSenha),
-    url(r'^noticias/', noticias),
-    url(r'^NovaDisciplina/', NovaDisciplina),
-    url(r'^NovoCadastro/', NovoCadastro),
-
+    url(r'^$',index),
+    url(r'disciplina',disciplina),
+    url(r'detalhe_curso',detalhe_curso),
+    url(r'index',index),
+    url(r'noticias',noticias),
+    url(r'lista_curso',lista_cursos),
+    url(r'contato',contato),
+    url(r'login',login),
 ]

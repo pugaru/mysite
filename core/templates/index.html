@@ -1,36 +1,76 @@
-{% extends 'base.html' %} 
-{% load static %}
-	{% block main %}
-		<br>
-		<section>
-			<div>
-				<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
-			</div>
-			<div class="content">
-				<article class="box">
-					<h1>Sobre</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		{% extends 'base.html' %}
+		{% block title %}
+		Home.
+		{% endblock %}
+	</head>
 
-					{% for i in id %}
-						<p>{{ i.nome }}
-					{% endfor %}
-					<span>A Faculdade Impacta Tecnologia nasceu da percepção de um Grupo, que desde 1998 é referência em TI, Gestão e Design, para suprir a falta de mão de obra especializada do mercado de tecnologia e oferecer uma formação completa e multidisciplinar aos alunos.</span>
-				</article>
+    {% block main %}
+	
+	<body>
+		</ul>
+ 
+		<texto_homepage>
+			{% if usuario %}
+				<p><h2>Olá {{ usuario }},tudo bem? Gostaria de um café?</h2></p>
+			{% endif %}
+		</texto_homepage>	
 
-				<article class="box2"> 
-					<h1>
-					Comentarios
-					</h1>
-					<span>"Gostei muito de estudar na Faculdade Impacta, além de ficar totalmente envolvido com diversas áreas da tecnogia, ainda podemos jogar um ping-pong no intervalo."   Ping Ong, 20 anos, aluno do curso de análise e desenvolvimento de sistemas do ano de 2014.
-					</span>
-					<span>
-					"A Faculdade Impacta tem parcerias bem legais com diversas empresas da área de tecnologia. E isso ajuda muito a ingressar na área."  João Cleto, 27 anos, aluno do curso de banco de dados do anos de 2016."
-					</span>
+		<txt_mural>
+			{% if usuario %}
+				{% if perfil == 'aluno' %}
+				<nome_mural><h2><p>Conteúdo para Alunos</p></h2></nome_mural>
 
-					<span>
-					"A Faculdade Impacta apoia e trabalha para o desenvolvimento da área de tecnologia, por isso incentiva vários projetos orientados por professores. Muito bom contar com esse tipo de apoio." Astolpho Bartholomeu Mendes, 30 anos, aluno do curso de análise e desenvolvimento de sistemas do ano de 2012.
-					</span>
-				</article>
-			</div>
-		</section>
-	{% endblock %}
+					<texto_homepage>
+						<p>bláblábláblábláblábláblá</p>
+					</texto_homepage>
 
+				{% elif perfil == 'professor' %}
+				<nome_mural><h2><p>Conteúdo para Professores</p></h2></nome_mural>
+
+					<texto_homepage>
+						<p>bláblábláblábláblábláblá</p>
+					</texto_homepage>
+
+				{% else %}
+				<nome_mural><h2><p>Conteúdo para Coordenadores</p></h2></nome_mural>
+					
+					<texto_homepage>
+						<p>bláblábláblábláblábláblá</p>
+					</texto_homepage>					
+					
+				{% endif %}	
+			{% endif %}		
+		</txt_mural>
+
+			<center><h1><tipo_curso>Sobre a Impacta</tipo_curso></h1></center>
+		<img align="right" src="/static/campus-barra-funda.jpg" height="300" width="400"/>
+	</div>
+<p><texto_homepage>Fundada em 2003, a Faculdade Impacta Tecnologia começou a funcionar com cursos noturnos voltados a área de tecnologia da informação. 
+Localizada em um edifício de médio porte, construído para uso educacional, no bairro da Vila Clementino, próximo ao Metrô Santa Cruz, de onde originou o nome do campus</texto_homepage><br>
+<texto_homepage>No ano de 2007, foi considerada "uma das seis melhores parceiras acadêmicas" da TCS, umas das maiores empresas do mundo na área de tecnologia da informação.</texto_homepage><br>
+<texto_homepage>Em 2009, a faculdade realizou intercâmbios internacionais em parceria com duas universidades norte americanas: o CCC&TI e a ASU (Appalachian State University).</texto_homepage><br>
+<texto_homepage>No início dos anos 2010, devido a grande procura, a faculdade abriu mais duas pequenas unidades para dar suporte aos cursos de pós-graduação, sendo uma unidade próxima ao campus principal e outra unidade próximo ao Metrô Consolação.</texto_homepage><br>
+<texto_homepage>Em 2011 e 2012, a faculdade teve seus cursos reconhecidos pelo MEC.Em agosto de 2014, o campus Metrô Santa Cruz e toda a estrutura da faculdade foram transferidos para o bairro da Barra Funda, na zona oeste da capital. A antiga unidade principal e todas as unidades auxiliares foram fechadas, sendo concentrado tudo na nova sede.</texto_homepage><br>
+<texto_homepage>De acordo com a diretoria da faculdade, o novo campus é três vezes maior que a antiga estrutura da instituição, com capacidade para atender até 20 mil estudantes.</texto_homepage></p>
+</div>
+<br><br><br><br><br> 
+<HP_comentario><h2><center>---------------   Comentarios de ex-alunos:   ---------------</center></h2></HP_comentario>
+<br>
+<HP_comentario2>
+<p>Anderson - "Faculdade exelente!"</p>
+<p>Carlos - "Aprendi muito durante o curso, demais!"</p>
+<p>Helena - "Ótimas aulas e professores."</p>
+<p>Andreia - "Me formei e ja quero voltar."</p>
+<p>Marcos- "Ótimos professores, aprendi com facilidade."</center></p>
+<br><br><br>
+</HP_comentario2>
+</section>
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,33 +1,14 @@
 {% extends 'base.html' %}
-	{% block main %}
+{% block title %}Contato.{% endblock %}
 
-
-<br>
-
-<div>
-	<img src="{% static 'TecWeb/css/images/cursos-online.jpg' %}" class="banner" alt="banner">
-</div>
-
-
-<br>
-<br>	
-
-
-<div class="box2"> 
-<br>
-<br>
-<div id="Esqueci">
-	<p>CONTATO</p>
-	Email:<input name="Email"/><br>
-	Nome:<input name="Nome"/><br>
-	Assunto:<input name="Assunto"/><br>
-	Mensagem:<textarea name="Mensagem"></textarea><br>
-	<button class = "botao2" type="submit" >Confirmar</button>
-</div>
-</div>
-<div class="linebox2">
-</div>
-
-
-
-{% endblock %}
+{% block main %}
+        <h1>Contato</h1>
+        <form method="POST" action="">
+                {{ form.errors }}
+                {% csrf_token %}
+                Nome: <input name="nome" /><br>
+                Email: <input name="email" /><br>
+                Mensagens: <textarea name="mensagem"></textarea><br>
+                <button type="submit">Enviar</button>
+        </form>
+{% endblock %}        

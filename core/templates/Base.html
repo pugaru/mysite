@@ -1,64 +1,74 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<title>Faculdade Impacta</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-	</head>
-	<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="/static/Base_layout.css">  
+        <link rel="stylesheet" href="/static/mobile.css" media="(max-width: 320px)">    
+        <title>
+		{% block title %}
 
+    	{% endblock %}
+		</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/icone.png">
+        
+    </head>
+    <body>
+        <div class="header">
+            
+                <img src="/static/impacta1.png">
+            
 
-		<header>
-			<a href="/" class="logo"><img src="{% static 'TecWeb/css/images/Header/menu/impacta_logo.png' %}" alt="Logo"></a>
-			<nav class='menu'>
-				<ul class="nav"> 
-				<li><a href="/">Home</a>
-				<li><a href="/cursos">Lista de Cursos</a> 
-				<li><a href="/detalhes">Detalhes dos Cursos</a> 
-				<li><a href="/disciplinas">Disciplinas</a>
-				<li><a href="/noticias">Noticias</a> 
-				 
-				</ul>
-				</li>
-			</ul>
-			</nav>
-				<table cellspacing="0" class="login">	
-					<tr>
-						<td align="left"><label for="usuario">Usuário:</label></td>
-						<td align="left"><label for="senha">Senha:</label></td>
-					</tr>
-					<tr>
-						<td align="left"><input name="usuario" id="usuario"/></td>
-						<td align="left"><input name="senha" type="password" id="senha"/></td>
-						<td align="left"><input type="submit" value="Entrar"></td>
-					</tr>
-					<tr>
-						<td align="left"><a href="/EsqueciSenha" class="login2">Esqueceu a senha?</a></td>
-						<td align="left"><a href="/NovoCadastro" class="login2">Criar conta</a></td>
-					</tr>
-						<td align="left">
-							<label class="container">
-							<input type="checkbox">Lembre-se de mim
-							<span class="checkmark"></span>
-						</td>
-					</label>
-				</table>
-		</header>
-		<main>
-        {% block main %}
+        </div>
+                
+            
+        <ul class="topnav">
+            <li><a class="active" href="#/templates/index.html">Home</a></li>
+            <li><a href="#/templates/lista_cursos.html">Lista de Cursos</a></li>
+            <li><a href="#/templates/detalhe_curso.html ">Detalhe de Cursos</a></li>
+            <li><a href="#/templates/disciplina.html">Disciplinas</a></li>
+            <li><a href="#/templates/noticias.html">Noticias</a></li>
+            <li><a href="#/templates/contato.html">Contato</a></li>
+            <li><a href="#">Sobre</a></li>  
+			{% if not usuario %}
+            <li class="dropdown">
+                <a href="#">Login</a>
+                <div class="dropdown-content">
+                    <input type="Text" placeholder="RA"/>
+                    <input type="password" placeholder="Senha"/>
+                    <button type="submit">Entrar</button>
+                        
+                </div>
+                    
+            </li>
+			{% endif %}
+        </ul>
+              
+                  
+        <div class="row">
 
-        {% endblock %}
-		</main>
-		<footer class="rodape">
-			<br>
-			© Impacta 2017. Todos os direitos reservados. Política de privacidade
+            <div class="column side">                                 
+                {% block main %}
 
-		</footer>
+    			{% endblock %}
+            </div>
+            <div class="column middle">
+                {% block main %}
 
-	</body>
+    			{% endblock %}
+            </div>
+            <div class="column side">
+                {% block main %}
+
+    			{% endblock %}
+            </div>
+        </div>
+                  
+        <div class="footer">
+            <img src="/static/impacta2.png " width="30%">
+            <p>                
+                © 2017 Faculdade Impacta Tecnologia . Todos os direitos reservados
+            </p>
+        </div>
+    </body>
 </html>
-
-
-
