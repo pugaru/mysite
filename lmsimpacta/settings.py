@@ -91,7 +91,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = '/login'
+# LOGIN_URL = '/login'
 
 # Specify the default test runner.
 # TEST_RUNNER = 'django.test.runner.DiscoverRunner'

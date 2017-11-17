@@ -10,5 +10,4 @@ class Curso(models.Model):
         descricao = models.TextField(blank=True)
         Matriz_Curricular = models.TextField(blank=True)
         def __unicode__(self):
-                return self.nome    
-# Create your models here.
+                return self.nome
