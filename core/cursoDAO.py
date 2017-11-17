@@ -68,7 +68,7 @@ class CursoDAO():
         carga_horaria = row[4]
         ativo = row[5]
         descricao = row[6]
-        matrizcurricular = row[7]
+        # matrizcurricular = row[7]
 
         # abre intancia do objeto e atribuir dados a suas propriedades
         curso = Curso()
@@ -78,6 +78,6 @@ class CursoDAO():
         curso.carga_horaria = carga_horaria
         curso.ativo = ativo
         curso.descricao = descricao
-        curso.Matriz_Curricular = matrizcurricular
+        # curso.Matriz_Curricular = matrizcurricular
 
         return curso
