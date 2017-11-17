@@ -52,12 +52,12 @@ class CursoDAO():
     def delete(self, curso):
 
         query = 'DELETE FROM core_curso WHERE nome = {0}'.format(curso.nome)
-        ExecutorSQL.delete(query)
+        ExecutorSQL().delete(query)
 
     def deleteAll(self):
 
         query = 'DELETE FROM core_curso'
-        ExecutorSQL.delete(query)
+        ExecutorSQL().delete(query)
 
     def retornaCurso(self, row):
 

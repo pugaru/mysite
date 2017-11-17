@@ -36,7 +36,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'lmsimpacta.urls'
-WSGI_APPLICATION = 'lmsimpacta.wsgi.application'
 
 TEMPLATES = [
     {
@@ -53,6 +52,8 @@ TEMPLATES = [
         },
     },
 ]
+
+WSGI_APPLICATION = 'lmsimpacta.wsgi.application'
 
 DATABASES = {
     'default': {
