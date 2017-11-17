@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Impacta.urls'
+ROOT_URLCONF = 'lmsimpacta.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Impacta.wsgi.application'
+WSGI_APPLICATION = 'lmsimpacta.wsgi.application'
 
 
 # Database
@@ -131,6 +131,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-#login 
-# AUTH_USER_MODEL = 'core.Usuario'
